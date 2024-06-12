@@ -25,28 +25,37 @@ public class AlarmTest {
 
     @Test
     public void shouldSetAlarmOnWhenPressureIsTooLow() {
+        //Arrange
         when(sensor.popNextPressurePsiValue()).thenReturn(16.0);
 
+        //Act
         alarm.check();
 
+        //Assert
         assertTrue(alarm.isAlarmOn());
     }
 
     @Test
     public void shouldSetAlarmOnWhenPressureIsTooHigh() {
+        //Arrange
         when(sensor.popNextPressurePsiValue()).thenReturn(22.0);
 
+        //Act
         alarm.check();
 
+        //Assert
         assertTrue(alarm.isAlarmOn());
     }
 
     @Test
     public void shouldSetAlarmOffWhenPressureIsOk() {
+        //Arrange
         when(sensor.popNextPressurePsiValue()).thenReturn(18.0);
 
+        //Act
         alarm.check();
 
+        //Assert
         assertFalse(alarm.isAlarmOn());
     }
 }

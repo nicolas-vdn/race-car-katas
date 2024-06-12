@@ -6,17 +6,15 @@ import java.io.IOException;
 
 public class HtmlTextConverter
 {
-    private String fullFilenameWithPath;
-
     public HtmlTextConverter(String fullFilenameWithPath)
     {
         this.fullFilenameWithPath = fullFilenameWithPath;
     }
 
     public String convertToHtml() throws IOException{
-    
+
 	    BufferedReader reader = new BufferedReader(new FileReader(fullFilenameWithPath));
-	    
+
 	    String line = reader.readLine();
 	    String html = "";
 	    while (line != null)
@@ -32,4 +30,6 @@ public class HtmlTextConverter
 	public String getFilename() {
 		return this.fullFilenameWithPath;
 	}
+
+	private String fullFilenameWithPath;
 }
