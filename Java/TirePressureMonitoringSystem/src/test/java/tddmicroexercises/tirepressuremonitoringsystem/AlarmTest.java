@@ -11,4 +11,10 @@ public class AlarmTest {
         Alarm alarm = new Alarm();
         assertFalse(alarm.isAlarmOn());
     }
+
+    @Test
+    public void checkIfPressureIsTooLow() {
+        double pressure = 15;
+        
+    }
 }
