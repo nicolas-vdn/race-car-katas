@@ -7,14 +7,15 @@ import org.junit.jupiter.api.Test;
 public class AlarmTest {
 
     @Test
-    public void foo() {
+    public void checkInitialisation() {
         Alarm alarm = new Alarm();
         assertFalse(alarm.isAlarmOn());
     }
 
     @Test
     public void checkIfPressureIsTooLow() {
-        double pressure = 15;
-        
+        Alarm alarm = new Alarm();
+        alarm.check();
+        assertFalse(alarm.isAlarmOn());
     }
 }
